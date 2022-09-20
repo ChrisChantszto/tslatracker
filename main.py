@@ -11,7 +11,7 @@ NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 parameters = {
     "function": "TIME_SERIES_DAILY",
     "symbol": STOCK_NAME,
-    "apikey": "ZMVS0KLS3JZK97IP",
+    "apikey": YOUR_API,
 
 }
 
@@ -43,7 +43,7 @@ else:
     positive_or_negative = "🔻"
 
 #TODO 5. - If TODO4 percentage is greater than 5 then print("Get News").
-NEWS_APIKEY = "1ee10febd10349a08304d198c4d4fbd5"
+NEWS_APIKEY = YOUR_API
 newparameters = {
     "q": COMPANY_NAME,
     "from": str(date.today()),
@@ -67,9 +67,9 @@ for i in range(0, 3):
     new_list["description"].append(description)
     new_list["url"].append(url)
 
-TWILIO_SID = "ACc3b1c50290856681acd9a43d9e1e30a6"
-TWILIO_AUTHTOKEN = "7164759c1749066acfc8bfae6af1eef6"
-TWILIO_PHONE = "+18159576374"
+TWILIO_SID = YOUR_SID
+TWILIO_AUTHTOKEN = YOUR_TOKEN
+TWILIO_PHONE = YOUR_PHONE
 
 client = Client(TWILIO_SID, TWILIO_AUTHTOKEN)
 
@@ -78,5 +78,5 @@ for i in range(0, 3):
                     .create(
                          body=f"{STOCK_NAME}: {positive_or_negative}{new_list['stocks']}%\n{new_list['description'][i]}\n{new_list['url'][i]}",
                          from_=TWILIO_PHONE,
-                         to='+85254062017'
+                         to=YOUR_PHONE
                      )
