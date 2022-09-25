@@ -42,7 +42,6 @@ if float(yesterday_close_price) > float(day_before_yesterday_close_price):
 else:
     positive_or_negative = "🔻"
 
-#TODO 5. - If TODO4 percentage is greater than 5 then print("Get News").
 NEWS_APIKEY = YOUR_API
 newparameters = {
     "q": COMPANY_NAME,
